@@ -14,6 +14,7 @@
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
+      overflow: hidden;
     }
     h1 {
       color: white;
@@ -37,23 +38,19 @@
     button:hover {
       transform: scale(1.1);
     }
-    .balloon {
+    .emoji {
       position: absolute;
-      bottom: -100px;
-      width: 40px;
-      height: 60px;
-      background: radial-gradient(circle at 30% 30%, #ff6f91, #ff4e50);
-      border-radius: 50% 50% 45% 45%;
-      animation: floatUp 6s linear forwards;
-      opacity: 0.8;
+      bottom: -50px;
+      font-size: 30px;
+      animation: floatUp 5s linear forwards;
     }
     @keyframes floatUp {
       0% {
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
         opacity: 1;
       }
       100% {
-        transform: translateY(-120vh) scale(1.2);
+        transform: translateY(-120vh);
         opacity: 0;
       }
     }
@@ -62,23 +59,19 @@
 <body>
 
   <h1>HAPPY BIRTHDAY SWEY ❤️</h1>
-  <button onclick="releaseBalloons()">Click Me for Balloons 🎈</button>
+  <button onclick="releaseEmojis()">Click Me for Surprises 🎉</button>
 
   <script>
-    function releaseBalloons() {
-      for (let i = 0; i < 20; i++) {
-        let balloon = document.createElement('div');
-        balloon.className = 'balloon';
-        balloon.style.left = Math.random() * window.innerWidth + 'px';
-        balloon.style.background = getRandomColor();
-        document.body.appendChild(balloon);
-        setTimeout(() => balloon.remove(), 7000);
+    function releaseEmojis() {
+      const emojis = ['🎂', '🎁', '🎊', '🥳'];
+      for (let i = 0; i < 30; i++) {
+        let emoji = document.createElement('div');
+        emoji.className = 'emoji';
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.left = Math.random() * window.innerWidth + 'px';
+        document.body.appendChild(emoji);
+        setTimeout(() => emoji.remove(), 6000);
       }
-    }
-
-    function getRandomColor() {
-      const colors = ['#FF6F91', '#FF9671', '#FFC75F', '#F9F871', '#D65DB1'];
-      return colors[Math.floor(Math.random() * colors.length)];
     }
   </script>
 
