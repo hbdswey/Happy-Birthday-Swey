@@ -15,12 +15,26 @@
       align-items: center;
       font-family: Arial, sans-serif;
       overflow: hidden;
+      position: relative;
     }
+
     h1 {
       color: white;
       font-size: 3em;
       text-shadow: 2px 2px 4px #000000;
+      background: linear-gradient(90deg, #ff99cc, #ff66cc, #ff99cc);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glitter 3s linear infinite;
     }
+
+    @keyframes glitter {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     button {
       background-color: hotpink;
       color: white;
@@ -31,46 +45,50 @@
       cursor: pointer;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
       transition: transform 0.2s, box-shadow 0.2s;
+      margin-top: 20px;
     }
+
     button:hover {
       transform: scale(1.1);
       box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
-    .emoji {
+
+    .confetti {
       position: absolute;
-      font-size: 30px;
-      animation: floatUp 5s linear forwards;
-      user-select: none;
+      width: 10px;
+      height: 10px;
+      background-color: yellow;
+      opacity: 0.7;
+      animation: fall 3s linear forwards;
     }
-    @keyframes floatUp {
-      0% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-600px);
-        opacity: 0;
-      }
+
+    @keyframes fall {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
     }
   </style>
 </head>
 <body>
 
   <h1>HAPPY BIRTHDAY SWEY ❤️</h1>
-  <button onclick="releaseEmojis()">Click Me for Surprises 🎉</button>
+  <button onclick="startConfetti()">Click for Confetti 🎉</button>
 
   <script>
-    function releaseEmojis() {
-      const emojis = ['🎂', '🎁', '🎊'];
-      for (let i = 0; i < 30; i++) {
-        let emoji = document.createElement('div');
-        emoji.className = 'emoji';
-        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-        emoji.style.left = Math.random() * window.innerWidth + 'px';
-        emoji.style.top = Math.random() * window.innerHeight + 'px';
-        document.body.appendChild(emoji);
-        setTimeout(() => emoji.remove(), 5000);
+    function startConfetti() {
+      for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * window.innerWidth + 'px';
+        confetti.style.backgroundColor = getRandomColor();
+        confetti.style.animationDuration = (Math.random() * 2 + 1) + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
       }
+    }
+
+    function getRandomColor() {
+      const colors = ['#ff66cc', '#ffcc00', '#66ff66', '#00ccff', '#ff6699', '#cc99ff'];
+      return colors[Math.floor(Math.random() * colors.length)];
     }
   </script>
 
