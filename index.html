@@ -1,32 +1,3 @@
-[12:24 am, 02/07/2025] ~Maria Varghese: <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HAPPY BIRTHDAY SWEY ❤️</title>
-  <style>
-    body {
-      background-color: pink;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-      position: relative;
-    }
-
-    h1 {
-      color: white;
-      font-size: 3em;
-      text-shadow: 2px 2px 4px #000000;
-      background: linear-gradient(90deg, #ff99cc, #ff66cc, #ff99cc);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: glitt…
 [12:29 am, 02/07/2025] ~Maria Varghese: <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,6 +22,42 @@
       color: white;
       font-size: 3em;
       text-shadow: 2px 2px 4px #000000;
+    }
+
+    button {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      cursor: pointer;
+      box-sha…
+[12:34 am, 02/07/2025] ~Maria Varghese: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY BIRTHDAY SWEY ❤️</title>
+  <style>
+    body {
+      background-color: pink;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      color: white;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px #000000;
+      text-transform: uppercase;
     }
 
     button {
@@ -89,11 +96,10 @@
 <body>
 
   <h1>HAPPY BIRTHDAY SWEY ❤️</h1>
-  <button onclick="startConfetti()">Click Me 🎉</button>
+  <button onclick="startConfetti()">Click Me 🥳</button>
 
   <script>
     function startConfetti() {
-      // Confetti animation
       for (let i = 0; i < 100; i++) {
         let confetti = document.createElement('div');
         confetti.className = 'confetti';
@@ -103,11 +109,6 @@
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 3000);
       }
-
-      // Pop-up message
-      setTimeout(() => {
-        alert("HAPPY 19 SWEY 🎉");
-      }, 500); // Popup appears half a second after confetti starts
     }
 
     function getRandomColor() {
