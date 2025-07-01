@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[12:24 am, 02/07/2025] ~Maria Varghese: <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -26,13 +26,31 @@
       background-size: 300% 300%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: glitter 3s linear infinite;
+      animation: glitt…
+[12:29 am, 02/07/2025] ~Maria Varghese: <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HAPPY BIRTHDAY SWEY ❤️</title>
+  <style>
+    body {
+      background-color: pink;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
     }
 
-    @keyframes glitter {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    h1 {
+      color: white;
+      font-size: 3em;
+      text-shadow: 2px 2px 4px #000000;
     }
 
     button {
@@ -71,10 +89,11 @@
 <body>
 
   <h1>HAPPY BIRTHDAY SWEY ❤️</h1>
-  <button onclick="startConfetti()">Click for Confetti 🎉</button>
+  <button onclick="startConfetti()">Click Me 🎉</button>
 
   <script>
     function startConfetti() {
+      // Confetti animation
       for (let i = 0; i < 100; i++) {
         let confetti = document.createElement('div');
         confetti.className = 'confetti';
@@ -84,6 +103,11 @@
         document.body.appendChild(confetti);
         setTimeout(() => confetti.remove(), 3000);
       }
+
+      // Pop-up message
+      setTimeout(() => {
+        alert("HAPPY 19 SWEY 🎉");
+      }, 500); // Popup appears half a second after confetti starts
     }
 
     function getRandomColor() {
